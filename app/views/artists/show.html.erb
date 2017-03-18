@@ -1,0 +1,28 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @artist.photo.image %>
+</p>
+<p>
+<strong>Artist:</strong>
+  <%= @artist.name %>
+</p>
+
+<h4>All songs</h4>
+
+<% if @artist.songs.any? %>
+  <ul>
+    <% @artist.songs.each do |song| %>
+      <li><%= song.title %></li>
+      <p><%= link_to Listen, artist_song_path(@artist) %></p>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No songs yet, you can add one below</p>
+<% end %>
+<p><%= link_to "Add a new song", new_artist_song_path(@artist) %></p>
+
+
+<p><%= link_to "terug naar artiesten", artists_path %></p>

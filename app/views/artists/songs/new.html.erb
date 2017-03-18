@@ -1,0 +1,14 @@
+<h1> Add a song  %></h1>
+
+<%= form_for @song.new do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :language %>
+  <%= f.number_field :language %>
+
+  <%= f.label :lenght_in_min %>
+  <%= f.text_field :lenght_in_min %>
+
+  <%= f.submit "Add" %>
+<% end %>

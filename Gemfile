@@ -1,3 +1,6 @@
+
+ruby '2.4.0'
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -60,4 +63,10 @@ group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
 end
 
+gem 'rails_12factor', group: :product
+
 gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'carrierwave', '0.11.2'
+
+gem 'cloudinary', '1.2.3'
