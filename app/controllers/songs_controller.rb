@@ -26,7 +26,7 @@ class SongsController < ApplicationController
          redirect_to artist_path(artist)
         else
           flash[:error] = "Addition failed"
-      render 'new'
+        render 'new'
         end
     end
 
