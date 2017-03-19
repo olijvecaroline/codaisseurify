@@ -24,6 +24,7 @@
 <% end %>
 
 <p><%= link_to "Add a new song", new_song_path%></p>
-
+<p><%= link_to "Delete artist", artist_path(@artist), method: :destroy,
+              data: { confirm: 'Are you sure?' } %></p>
 
 <p><%= link_to "terug naar artiesten", artists_path %></p>

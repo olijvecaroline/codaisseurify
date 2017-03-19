@@ -23,7 +23,7 @@ class SongsController < ApplicationController
 
         if
           @song.save
-         render 'show'
+         redirect_to artist_path(artist)
         else
           flash[:error] = "This title is already in the list"
       render 'new'
@@ -33,18 +33,14 @@ class SongsController < ApplicationController
     def destroy
       song_params =
       params.require(:song).permit(:title, :language, :lenght_in_min, :artist_id)
+      @song = Song.find(params[:id])
 
-      @song = Song.new(song_params)
+      @song.destroy
 
-      artist = Artist.find(params[:song][:artist_id])
-
-        if
-          @song.destroy
-          redirect_to @artists_path
-        else
-          flash[:error] = "deletion fails"
-      render 'new'
-        end
+      redirect_to artist_path(artist)
     end
+
+
+      
 
 end
