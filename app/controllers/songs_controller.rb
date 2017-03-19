@@ -31,13 +31,12 @@ class SongsController < ApplicationController
     end
 
     def destroy
-      song_params =
-      params.require(:song).permit(:title, :language, :lenght_in_min, :artist_id)
+      #song_params =
+      #params.require(:song).permit(:title, :language, :lenght_in_min, :artist_id)
       @song = Song.find(params[:id])
 
       @song.destroy
-
-      redirect_to artist_path(artist)
+      redirect_to artist_path
     end
 
 
