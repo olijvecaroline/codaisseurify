@@ -22,10 +22,10 @@ class SongsController < ApplicationController
       artist = Artist.find(params[:song][:artist_id])
 
         if
-          @song.save
+         @song.save
          redirect_to artist_path(artist)
         else
-          flash[:error] = "This title is already in the list"
+          flash[:error] = "Addition failed"
       render 'new'
         end
     end
@@ -41,6 +41,6 @@ class SongsController < ApplicationController
     end
 
 
-      
+
 
 end

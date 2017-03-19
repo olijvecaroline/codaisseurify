@@ -16,7 +16,8 @@
   <ul>
     <% @artist.songs.each do |song| %>
       <li><%= song.title %></li>
-      <p><%= link_to Listen, song_path(@artist) %></p>
+      song = Song.find(params[:song][:artist_id])
+      <p><%= link_to Listen, song_path %></p>
     <% end %>
   </ul>
 <% else %>
