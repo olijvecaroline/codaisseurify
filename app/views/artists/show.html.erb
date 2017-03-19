@@ -16,13 +16,14 @@
   <ul>
     <% @artist.songs.each do |song| %>
       <li><%= song.title %></li>
-      <p><%= link_to Listen, artist_song_path(@artist) %></p>
+      <p><%= link_to Listen, song_path(@artist) %></p>
     <% end %>
   </ul>
 <% else %>
   <p>No songs yet, you can add one below</p>
 <% end %>
-<p><%= link_to "Add a new song", new_artist_song_path(@artist) %></p>
+
+<p><%= link_to "Add a new song", new_song_path%></p>
 
 
 <p><%= link_to "terug naar artiesten", artists_path %></p>

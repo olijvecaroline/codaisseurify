@@ -1,3 +1,16 @@
 <p>hier form voor nieuwe song</p>
 
-<%= " songname" %>
+<%= form_for @song do |f| %>
+
+    <p><%= f.label :artist_id %>
+    <%= f.collection_select(:artist_id, Artist.all, :id, :name)%></p>
+
+    <p><%= f.label :title %>
+    <%= f.text_field :title %></p>
+
+    <p><%= f.label :lenght_in_min %>
+    <%= f.number_field :lenght_in_min %></p>
+
+    <p><%= f.submit (@visitor) %></p>
+
+  <% end %></p>
