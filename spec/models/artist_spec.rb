@@ -18,4 +18,14 @@ RSpec.describe Artist, type: :model do
       expect { artist.destroy }.to change(Song, :count).by(-1)
     end
   end
+
+
+  describe "validations" do
+
+    it "is invalid without a name"do
+    artist = Artist.new(name: "")
+      artist.valid?
+      expect(artist.errors).to have_key(:name)
+    end
+  end
 end
