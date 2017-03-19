@@ -36,7 +36,8 @@ class SongsController < ApplicationController
       @song = Song.find(params[:id])
 
       @song.destroy
-      redirect_to artist_path
+      redirect_to artists_index_path
+      #moet artistpath worden
     end
 
 

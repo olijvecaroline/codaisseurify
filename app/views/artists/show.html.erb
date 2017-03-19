@@ -8,20 +8,24 @@
   </p>
 
   <h4>All songs</h4>
+  Click on the song to listen or delete it from your list
 
   <% if @artist.songs.any? %>
       <ul>
         <% @artist.songs.each do |song| %>
-        <li><%=link_to (song.title), song_path(song.id) %></li>
+        <li><%=link_to (song.title), song_path(song.id) %>
+        </li>
         <% end %>
       </ul>
   <% else %>
       <p> No songs yet, you can add one below </p>
   <% end %>
 
-  <p> <%= link_to "Add a new song", new_song_path%> </p>
+  <p> <%= link_to "Add a new song to the list", new_song_path%> </p>
 
 
 
   <p> <%= link_to "Delete artist", artist_path(@artist), method: :destroy,
               data: { confirm: 'Are you sure?' } %> </p>
+
+              <p><%= link_to "Back to artists", artists_path %></p>
