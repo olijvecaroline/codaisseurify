@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :photo do
-  #  photo  { Faker::image_url }
+    image "fotostring"
     artist   { build(:artist) }
   end
 end

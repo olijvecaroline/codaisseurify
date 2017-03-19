@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+    describe " photo association with artist" do
+    let!(:photo) { create :photo, artist: artist }
+    let!(:artist) {create :artist}
+
+    it "belongs to an artist" do
+      photo = artist.photo
+      expect(photo.artist).to eq(artist)
+    end
+  end
 end
